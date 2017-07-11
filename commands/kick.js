@@ -1,8 +1,8 @@
 module.exports = {
      main: function(bot, msg) {
-     var mention = message.mentions.users.array()[0]
+     const mention = message.mentions.users.first();
 	var kickPerms = message.guild.member(bot.user).hasPermission('KICK_MEMBERS')
-	if (mention === null) {
+	if (!mention) {
 		message.channel.send('Please mention a user, that you would like to kick.')
 	} else {
 		if (!kickPerms) {
