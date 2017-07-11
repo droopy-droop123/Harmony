@@ -1,1 +1,1 @@
-You may put commands in here to stop the bot from loading them automatically. 
+Any commands that are in here will not be loaded on the bot
