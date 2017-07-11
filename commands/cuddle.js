@@ -17,7 +17,7 @@ module.exports = {
             }
             if (!user) {
                 const embed = new Discord.RichEmbed()
-                    .setTitle(`Tsuda cuddled the lonely ${msg.author.username} to make them feel better`)
+                    .setTitle(`Harmony cuddled the lonely ${msg.author.username} to make them feel better`)
                     .setColor("#808080")
                     .setImage(result.url)
 
