@@ -17,7 +17,7 @@ module.exports = {
 				}
 			}
    		}
-	}
+	},
     args: '<mention>',
     help: 'Ban a user'
 };
