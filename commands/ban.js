@@ -14,10 +14,10 @@ module.exports = {
 			} else {
 				message.guild.ban(mention)
 				message.channel.send(mention + ' has been banned.')
+				}
 			}
-		}
-    }
-	 }
-    args: '<mention>'
+   		}
+	}
+    args: '<mention>',
     help: 'Ban a user'
 };
