@@ -18,6 +18,6 @@ module.exports = {
 		}
 	}
     },
-    args: '<mention>'
+    args: '<mention>',
     help: 'Kick a user'
 };
