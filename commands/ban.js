@@ -16,7 +16,7 @@ module.exports = {
 				message.channel.send(mention + ' has been banned.')
 			}
 		}
-    },
+    }
     args: '<mention>'
     help: 'Ban a user'
 };
