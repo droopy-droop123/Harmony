@@ -8,6 +8,15 @@ module.exports = {
         }); //the constructor arguments are optional 
         const user = msg.mentions.users.first();
         WolkeApi.picture("pat").then((result) => {
+			if (user === message.author) {
+            const embed = new Discord.RichEmbed()
+                .setTitle(`Harmony patted the sad and small ${msg.author.username}`)
+                .setColor("#808080")
+                .setImage(result.url)
+
+            message.channel.sendEmbed(embed)
+            return
+			}
             if (user) {
                 const embed = new Discord.RichEmbed()
                     .setTitle(`${msg.author.username} patted ${user.username}`)

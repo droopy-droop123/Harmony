@@ -8,6 +8,15 @@ module.exports = {
         }); //the constructor arguments are optional 
         const user = msg.mentions.users.first();
         WolkeApi.picture("hug").then((result) => {
+			if (user === message.author) {
+            const embed = new Discord.RichEmbed()
+                .setTitle(`Harmony hugged the lonely ${msg.author.username}`)
+                .setColor("#808080")
+                .setImage(result.url)
+
+            message.channel.sendEmbed(embed)
+            return
+			}
             if (user) {
                 const embed = new Discord.RichEmbed()
                     .setTitle(`${msg.author.username} hugged ${user.username}`)
