@@ -22,6 +22,9 @@ module.exports = {
                 }
             }
         }
+		else {
+			msg.reply("I'm sorry, but you do not have the `BAN_MEMBERS` permission to be able to use this command")
+		}
     },
     args: '<mention>',
     help: 'Ban a user'
