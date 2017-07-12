@@ -17,5 +17,5 @@ module.exports = {
         })
     },
     args: '<mention>',
-    help: 'O )3 O'
+    help: 'Rem lovers, rejoice!'
 };
