@@ -10,7 +10,6 @@ module.exports = {
             const embed = new Discord.RichEmbed()
                 .setColor("#808080")
                 .setImage(result.url)
-                .setFooter('©2017 Felix#1330', 'http://orig13.deviantart.net/f7a2/f/2016/343/a/b/isana_yashiro_minimal_icon_by_lol123xb-dar48hx.jpg')
 
             msg.channel.sendEmbed(embed)
         }).catch((error) => {
