@@ -8,13 +8,13 @@ module.exports = {
         }); //the constructor arguments are optional 
         const user = msg.mentions.users.first();
         WolkeApi.picture("stare").then((result) => {
-			if (user === message.author) {
+			if (user === msg.author) {
             const embed = new Discord.RichEmbed()
                 .setTitle(`Harmony stared at the lonely ${msg.author.username}`)
                 .setColor("#808080")
                 .setImage(result.url)
 
-            message.channel.sendEmbed(embed)
+            msg.channel.sendEmbed(embed)
             return
 			}
             if (user) {
