@@ -11,12 +11,11 @@ Shows detailed information on the command inputted.
 * Clone the Git or Repo or whatnot
 * Create a Discord OAuth application and bot account
 * Edit some stuff inside the `bot.js` file which should look like this:
-`bot.OWNERID = '<your-discord-id>';
-bot.PREFIX = '<bot-prefix>';
-bot.TOKEN = '<bot-token>';
-
-bot.DETAILED_LOGGING = false;
-bot.DELETE_COMMANDS = false;`
+`bot.OWNERID = '<your-discord-id>';`
+`bot.PREFIX = '<bot-prefix>';`
+`bot.TOKEN = '<bot-token>';`
+`bot.DETAILED_LOGGING = false;`
+`bot.DELETE_COMMANDS = false;`
 * Install Discord JS using Node JS and the command `npm install discord.js`
 * Install anything else it tells you to eg: `Wolke-api`
 * Make sure Discord JS is up to date
