@@ -40,30 +40,81 @@ commands.help = {};
 commands.help.args = '';
 commands.help.help = "Displays a list of usable commands.";
 commands.help.main = function(bot, msg) {
-    var cmds = [];
-	
+	var cmds = [];
+
 	for (let command in commands) {
-        if (!commands[command].hide) {
-			cmds.push({
-				name: bot.PREFIX + command,
-				value: commands[command].help,
-				inline: true
-			});
-        }
-    }
-	
+		if (!commands[command].hide) {
+			cmds.push(bot.PREFIX + command);
+		}
+	}
+
 	let embed = {
 		color: bot.COLOR,
-		description: "Here are a list of commands you can use.",
-		fields: cmds,
+		fields: [{
+			name: "Here are a list of commands you can use.",
+			value: "`" + cmds.join('`,`') + "`"
+		}],
 		footer: {
 			icon_url: bot.user.avatarURL,
 			text: bot.user.username
 		}
 	}
-	
-	msg.channel.sendMessage('', {embed});
+
+	msg.channel.send({
+		embed
+	});
 }
+
+commands.cmdhelp = {};
+commands.cmdhelp.args = '<command>'
+commands.cmdhelp.help = "Displays detailed information of a usable command.";
+commands.cmdhelp.main = function(bot, msg) {
+	const Discord = require('discord.js')
+	var realCmd
+	var cmdHelp
+	var cmdArgs
+	var cmd = msg.content
+	var helpInfo = ''
+	if (!cmd) {
+		'Please provide a command to get the information from.'
+		return
+	}
+	for (let command in commands) {
+		if (command === cmd) {
+			realCmd = command,
+			cmdHelp = commands[command].help
+			cmdArgs = commands[command].args
+			break
+		}
+	}
+	if (realCmd) {
+		helpInfo += '\nCommand: ' + realCmd
+
+		if (cmdHelp) {
+			helpInfo += '\nDescription: ' + cmdHelp
+		}
+		else {
+			helpInfo += '\nDescription: N/A'
+		}
+
+		if (cmdArgs) {
+			helpInfo += '\nUsage: ' + cmdArgs
+		}
+		else {
+			helpInfo += '\nUsage: N/A'
+		}
+		helpInfo += '\n'
+	}
+	else {
+		helpInfo = 'Command with the name `' + cmd + '` not found.'
+	}
+	const embed = new Discord.RichEmbed()
+		.setColor(3447003)
+		.addField('Info on command `' + cmd + '`:\n', helpInfo)
+	return msg.channel.sendEmbed(embed);
+
+}
+
 
 commands.load = {};
 commands.load.args = '<command>';
