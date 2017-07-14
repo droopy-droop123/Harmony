@@ -1,5 +1,5 @@
 # Official Harmony Discord Bot
-The official Harmony bot!!! Made with Discord.js
+A Discord.Js Bot Built To Bring Peace
 # Command list
 This list uses `h!` as the prefix for each (this will not list all commands as the help command already lists them)
 * `help`
