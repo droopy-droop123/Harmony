@@ -75,8 +75,8 @@ commands.cmdhelp.main = function(bot, msg) {
 	var cmdArgs
 	var cmd = msg.content
 	var helpInfo = ''
-	if (!cmd) {
-		'Please provide a command to get the information from.'
+	if (cmd === null || cmd === "" || cmd === " " || cmd === bot.PREFIX + "cmdhelp") {
+		msg.channel.send('Please provide a command to get the information from.')
 		return
 	}
 	for (let command in commands) {
